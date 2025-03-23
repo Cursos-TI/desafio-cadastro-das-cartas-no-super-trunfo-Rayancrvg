@@ -1,22 +1,73 @@
 #include <stdio.h>
-
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
+#include <string.h>
 
 int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+    // Variáveis Carta 01
+    char estado1[5], codigo1[5], cidade1[50]; // Todas as variáveis strings da Carta 01
+    int populacao1, ponto_tur1; // Todas as variáveis inteiras da Carta 01
+    float area1, pib1; // Todas as variáveis de Ponto Flutuante da Carta 01
 
-    return 0;
+    char estado2[5], codigo2[5], cidade2[50]; // Todas as variáveis strings da Carta 02
+    int populacao2, ponto_tur2; // Todas as variáveis inteiras da Carta 02
+    float area2, pib2; // Todas as variáveis de Ponto Flutuante da Carta 02
+    
+    // Carta 01 // Pega as informações da Carta 01.
+    printf("Carta 01:\n"); 
+    printf("Digite o Estado: "); // Imprime a solicitação para o scanf
+    scanf("%s", estado1); // Lê o que foi digitado após o printf
+    getchar();
+    printf("Digite o Código: "); // Imprime a solicitação para o scanf
+    scanf("%s", codigo1); // Lê o que foi digitado após o printf
+    getchar();
+    printf("Digite o nome da cidade: "); // Imprime a solicitação para o scanf
+    fgets(cidade1, 50, stdin); // Lê o que foi digitado após o printf
+    cidade1[strcspn(cidade1, "\n")] = 0; // Remove a linha gerado pelo fgets
+    printf("Digite a população: "); // Imprime a solicitação para o scanf
+    scanf("%d", &populacao1); // Lê o que foi digitado após o printf
+    printf("Digite a área: "); // Imprime a solicitação para o scanf
+    scanf("%f", &area1); // Lê o que foi digitado após o printf
+    printf("Digite o PIB: "); // Imprime a solicitação para o scanf
+    scanf("%f", &pib1); // Lê o que foi digitado após o printf
+    printf("Digite o número de pontos turísticos: "); // Imprime a solicitação para o scanf
+    scanf("%d", &ponto_tur1); // Lê o que foi digitado após o printf
+
+    // Carta 02 // Pega as informações da Carta 02.
+    printf("\nCarta 02:\n"); 
+    printf("Digite o Estado: "); // Imprime a solicitação para o scanf
+    scanf("%s", estado2); // Lê o que foi digitado após o printf
+    getchar();
+    printf("Digite o Código: "); // Imprime a solicitação para o scanf
+    scanf("%s", codigo2); // Lê o que foi digitado após o printf
+    getchar();
+    printf("Digite o nome da cidade: "); // Imprime a solicitação para o scanf
+    fgets(cidade2, 50, stdin); // Lê o que foi digitado após o printf
+    cidade2[strcspn(cidade2, "\n")] = 0; // Remove a linha gerado pelo fgets
+    printf("Digite a população: "); // Imprime a solicitação para o scanf
+    scanf("%d", &populacao2); // Lê o que foi digitado após o printf
+    printf("Digite a área: "); // Imprime a solicitação para o scanf
+    scanf("%f", &area2); // Lê o que foi digitado após o printf
+    printf("Digite o PIB: "); // Imprime a solicitação para o scanf
+    scanf("%f", &pib2); // Lê o que foi digitado após o printf
+    printf("Digite o número de pontos turísticos: "); // Imprime a solicitação para o scanf
+    scanf("%d", &ponto_tur2); // Lê o que foi digitado após o printf
+
+    printf("\nCarta 1:\n"); 
+    printf("Estado: %s\n", estado1); // Imprime o estado armazenado na variável "estado1"
+    printf("Código: %s\n", codigo1); // Imprime o código armazenado na variável "codigo1"
+    printf("Nome da Cidade: %s\n", cidade1); // Imprime a Cidade armazenada na variável "cidade1"
+    printf("População: %d\n", populacao1); // Imprime a População armazenada na variável "populacao1"
+    printf("Área: %.2f km²\n", area1); // Imprime a Área armazenada na variável "area1"
+    printf("PIB: %.2f bilhões de reais\n", pib1); // Imprime o PIB armazenado na variável "pib1"
+    printf("Número de Pontos Turísticos: %d\n", ponto_tur1); // Imprime o número de Pontos Turísticos armazenado na variável "ponto_tur1"
+
+    printf("\nCarta 2:\n"); 
+    printf("Estado: %s\n", estado2); // Imprime o estado armazenado na variável "estado2"
+    printf("Código: %s\n", codigo2); // Imprime o código armazenado na variável "codigo2"
+    printf("Nome da Cidade: %s\n", cidade2); // Imprime a Cidade armazenada na variável "cidade2"
+    printf("População: %d\n", populacao2); // Imprime a População armazenada na variável "populacao2"
+    printf("Área: %.2f km²\n", area2); // Imprime a Área armazenada na variável "area2"
+    printf("PIB: %.2f bilhões de reais\n", pib2); // Imprime o PIB armazenado na variável "pib2"
+    printf("Número de Pontos Turísticos: %d\n", ponto_tur2); // Imprime o número de Pontos Turísticos armazenado na variável "ponto_tur2"
+
+
 }

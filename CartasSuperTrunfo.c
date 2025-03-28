@@ -4,14 +4,18 @@
 int main() {
     // Variáveis Carta 01
     char estado1[5], codigo1[5], cidade1[50]; // Todas as variáveis strings da Carta 01
-    int populacao1, ponto_tur1; // Todas as variáveis inteiras da Carta 01
+    unsigned int populacao1; // Usado unsigned long pedido no desafio mestre
+    int ponto_tur1; // Todas as variáveis inteiras da Carta 01
     float area1, pib1; // Todas as variáveis de Ponto Flutuante da Carta 01
     float dens_popul1, pib_per1; // Inclui as variáveis do Desafio Aventureiro Carta 01
+    float superPoder1; // Inclui variável do Desafio Mestre Carta 01
 
     char estado2[5], codigo2[5], cidade2[50]; // Todas as variáveis strings da Carta 02
-    int populacao2, ponto_tur2; // Todas as variáveis inteiras da Carta 02
+    unsigned long int populacao2; // Usado unsigned long pedido no desafio mestre
+    int ponto_tur2; // Todas as variáveis inteiras da Carta 02
     float area2, pib2; // Todas as variáveis de Ponto Flutuante da Carta 02
     float dens_popul2, pib_per2; // Inclui as variáveis do Desafio Aventureiro Carta 02
+    float superPoder2; // Inclui variável do Desafio Mestre Carta 02
 
     // Carta 01 // Pega as informações da Carta 01.
     printf("Carta 01:\n"); 
@@ -25,7 +29,7 @@ int main() {
     fgets(cidade1, 50, stdin); // Lê o que foi digitado após o printf
     cidade1[strcspn(cidade1, "\n")] = 0; // Remove a linha gerado pelo fgets
     printf("Digite a população: "); // Imprime a solicitação para o scanf
-    scanf("%d", &populacao1); // Lê o que foi digitado após o printf
+    scanf("%lu", &populacao1); // Lê o que foi digitado após o printf
     printf("Digite a área: "); // Imprime a solicitação para o scanf
     scanf("%f", &area1); // Lê o que foi digitado após o printf
     printf("Digite o PIB: "); // Imprime a solicitação para o scanf
@@ -45,7 +49,7 @@ int main() {
     fgets(cidade2, 50, stdin); // Lê o que foi digitado após o printf
     cidade2[strcspn(cidade2, "\n")] = 0; // Remove a linha gerado pelo fgets
     printf("Digite a população: "); // Imprime a solicitação para o scanf
-    scanf("%d", &populacao2); // Lê o que foi digitado após o printf
+    scanf("%lu", &populacao2); // Lê o que foi digitado após o printf
     printf("Digite a área: "); // Imprime a solicitação para o scanf
     scanf("%f", &area2); // Lê o que foi digitado após o printf
     printf("Digite o PIB: "); // Imprime a solicitação para o scanf
@@ -62,7 +66,7 @@ int main() {
     printf("Estado: %s\n", estado1); // Imprime o estado armazenado na variável "estado1"
     printf("Código: %s\n", codigo1); // Imprime o código armazenado na variável "codigo1"
     printf("Nome da Cidade: %s\n", cidade1); // Imprime a Cidade armazenada na variável "cidade1"
-    printf("População: %d\n", populacao1); // Imprime a População armazenada na variável "populacao1"
+    printf("População: %lu\n", populacao1); // Imprime a População armazenada na variável "populacao1"
     printf("Área: %.2f km²\n", area1); // Imprime a Área armazenada na variável "area1"
     printf("PIB: %.2f bilhões de reais\n", pib1); // Imprime o PIB armazenado na variável "pib1"
     printf("Número de Pontos Turísticos: %d\n", ponto_tur1); // Imprime o número de Pontos Turísticos armazenado na variável "ponto_tur1"
@@ -73,11 +77,63 @@ int main() {
     printf("Estado: %s\n", estado2); // Imprime o estado armazenado na variável "estado2"
     printf("Código: %s\n", codigo2); // Imprime o código armazenado na variável "codigo2"
     printf("Nome da Cidade: %s\n", cidade2); // Imprime a Cidade armazenada na variável "cidade2"
-    printf("População: %d\n", populacao2); // Imprime a População armazenada na variável "populacao2"
+    printf("População: %lu\n", populacao2); // Imprime a População armazenada na variável "populacao2"
     printf("Área: %.2f km²\n", area2); // Imprime a Área armazenada na variável "area2"
     printf("PIB: %.2f bilhões de reais\n", pib2); // Imprime o PIB armazenado na variável "pib2"
     printf("Número de Pontos Turísticos: %d\n", ponto_tur2); // Imprime o número de Pontos Turísticos armazenado na variável "ponto_tur2"
     printf("Densidade Populacional: %.2f hab/km²\n", dens_popul2);
     printf("PIB per Capita %.2f reais\n", pib_per2);
+
+    // Calcula o super poder da Carta 01 de acordo com solicitado no Desafio Mestre
+    superPoder1 = (float)(populacao1 + area1 + pib1 + ponto_tur1 + pib_per1 + (area1 / populacao1));
+    // Calcula o super poder da Carta 02 de acordo com solicitado no Desafio Mestre
+    superPoder2 = (float)(populacao2 + area2 + pib2 + ponto_tur2 + pib_per2 + (area2 / populacao2));
+    
+    // populacao, area, pib, pontos turisticos, densidade populacional, pib per capita, super poder.
+    // Não encotrei como fazer essa comparação sem ser com if, else
+    // Comparando População
+    if (populacao1 > populacao2) {
+        printf("\nPopulação: Carta 01 venceu (%d)\n", populacao1 > populacao2);
+    } else {
+        printf("\nPopulação: Carta 02 venceu (%d)\n", populacao1 > populacao2);
+    };
+    // Comparando Area
+    if (area1 > area2) {
+        printf("Área: Carta 01 venceu (%d)\n", area1 > area2);
+    } else {
+        printf("Área: Carta 02 venceu (%d)\n", area1 > area2);
+    };
+    // Comparando PIB
+    if (pib1 > pib2) {
+        printf("PIB: Carta 01 venceu (%d)\n", pib1 > pib2);
+    } else {
+        printf("PIB: Carta 02 venceu (%d)\n", pib1 > pib2);
+    };
+    // Comparando Pontos Turísticos
+    if (ponto_tur1 > ponto_tur2) {
+        printf("Pontos Turísticos: Carta 01 venceu (%d)\n", ponto_tur1 > ponto_tur2);
+    } else {
+        printf("Pontos Turísticos: Carta 02 venceu (%d)\n", ponto_tur1 > ponto_tur2);
+    };
+    // Comparando Densidade Populacional
+    if (dens_popul1 < dens_popul2) {
+        printf("Densidade Populacional: Carta 01 venceu (%d)\n", dens_popul1 < dens_popul2);
+    } else {
+        printf("Densidade Populacional: Carta 02 venceu (%d)\n", dens_popul1 < dens_popul2);
+    };
+    // Comparando PIB per Capita
+    if (pib_per1 > pib_per2) {
+        printf("PIB per Capita: Carta 01 venceu (%d)\n", pib_per1 > pib_per2);
+    } else {
+        printf("PIB per Capita: Carta 02 venceu (%d)\n", pib_per1 > pib_per2);
+    };
+    // Comparando Super Poder
+    if (superPoder1 > superPoder2) {
+        printf("Super Poder: Carta 01 venceu (%d)\n", superPoder1 > superPoder2);
+    } else {
+        printf("Super Poder: Carta 02 venceu (%d)\n", superPoder1 > superPoder2);
+    };
+
+    return 0;
 
 }

@@ -66,7 +66,7 @@ int main() {
     printf("Estado: %s\n", estado1); // Imprime o estado armazenado na variável "estado1"
     printf("Código: %s\n", codigo1); // Imprime o código armazenado na variável "codigo1"
     printf("Nome da Cidade: %s\n", cidade1); // Imprime a Cidade armazenada na variável "cidade1"
-    printf("População: %lu\n", populacao1); // Imprime a População armazenada na variável "populacao1"
+    printf("População: %u\n", populacao1); // Imprime a População armazenada na variável "populacao1"
     printf("Área: %.2f km²\n", area1); // Imprime a Área armazenada na variável "area1"
     printf("PIB: %.2f bilhões de reais\n", pib1); // Imprime o PIB armazenado na variável "pib1"
     printf("Número de Pontos Turísticos: %d\n", ponto_tur1); // Imprime o número de Pontos Turísticos armazenado na variável "ponto_tur1"
@@ -77,7 +77,7 @@ int main() {
     printf("Estado: %s\n", estado2); // Imprime o estado armazenado na variável "estado2"
     printf("Código: %s\n", codigo2); // Imprime o código armazenado na variável "codigo2"
     printf("Nome da Cidade: %s\n", cidade2); // Imprime a Cidade armazenada na variável "cidade2"
-    printf("População: %lu\n", populacao2); // Imprime a População armazenada na variável "populacao2"
+    printf("População: %u\n", populacao2); // Imprime a População armazenada na variável "populacao2"
     printf("Área: %.2f km²\n", area2); // Imprime a Área armazenada na variável "area2"
     printf("PIB: %.2f bilhões de reais\n", pib2); // Imprime o PIB armazenado na variável "pib2"
     printf("Número de Pontos Turísticos: %d\n", ponto_tur2); // Imprime o número de Pontos Turísticos armazenado na variável "ponto_tur2"
@@ -132,6 +132,18 @@ int main() {
         printf("Super Poder: Carta 01 venceu (%d)\n", superPoder1 > superPoder2);
     } else {
         printf("Super Poder: Carta 02 venceu (%d)\n", superPoder1 > superPoder2);
+    };
+
+    // Desafio novato Tema 02 
+    // Compara a população das 2 cartas e volta com o resultado.
+    if (populacao1 > populacao2){
+        printf("\nCarta 01: %s (%s): %d\n", cidade1, estado1, populacao1);
+        printf("Carta 02: %s (%s): %d\n", cidade2, estado2, populacao2);
+        printf("Resultado: Carta 01 (%s) venceu\n", cidade1);
+    } else {
+        printf("\nCarta 01: %s (%s): %d\n", cidade1, estado1, populacao1);
+        printf("Carta 02: %s (%s): %d\n", cidade2, estado2, populacao2);
+        printf("Resultado: Carta 02 (%s) venceu\n", cidade2);
     };
 
     return 0;

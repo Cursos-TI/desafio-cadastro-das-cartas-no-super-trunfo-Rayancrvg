@@ -4,7 +4,7 @@
 int main() {
     // Variáveis Carta 01
     char estado1[5], codigo1[5], cidade1[50]; // Todas as variáveis strings da Carta 01
-    unsigned int populacao1; // Usado unsigned long pedido no desafio mestre
+    unsigned long int populacao1; // Usado unsigned long pedido no desafio mestre
     int ponto_tur1; // Todas as variáveis inteiras da Carta 01
     float area1, pib1; // Todas as variáveis de Ponto Flutuante da Carta 01
     float dens_popul1, pib_per1; // Inclui as variáveis do Desafio Aventureiro Carta 01
@@ -66,7 +66,7 @@ int main() {
     printf("Estado: %s\n", estado1); // Imprime o estado armazenado na variável "estado1"
     printf("Código: %s\n", codigo1); // Imprime o código armazenado na variável "codigo1"
     printf("Nome da Cidade: %s\n", cidade1); // Imprime a Cidade armazenada na variável "cidade1"
-    printf("População: %u\n", populacao1); // Imprime a População armazenada na variável "populacao1"
+    printf("População: %lu\n", populacao1); // Imprime a População armazenada na variável "populacao1"
     printf("Área: %.2f km²\n", area1); // Imprime a Área armazenada na variável "area1"
     printf("PIB: %.2f bilhões de reais\n", pib1); // Imprime o PIB armazenado na variável "pib1"
     printf("Número de Pontos Turísticos: %d\n", ponto_tur1); // Imprime o número de Pontos Turísticos armazenado na variável "ponto_tur1"
@@ -77,7 +77,7 @@ int main() {
     printf("Estado: %s\n", estado2); // Imprime o estado armazenado na variável "estado2"
     printf("Código: %s\n", codigo2); // Imprime o código armazenado na variável "codigo2"
     printf("Nome da Cidade: %s\n", cidade2); // Imprime a Cidade armazenada na variável "cidade2"
-    printf("População: %u\n", populacao2); // Imprime a População armazenada na variável "populacao2"
+    printf("População: %lu\n", populacao2); // Imprime a População armazenada na variável "populacao2"
     printf("Área: %.2f km²\n", area2); // Imprime a Área armazenada na variável "area2"
     printf("PIB: %.2f bilhões de reais\n", pib2); // Imprime o PIB armazenado na variável "pib2"
     printf("Número de Pontos Turísticos: %d\n", ponto_tur2); // Imprime o número de Pontos Turísticos armazenado na variável "ponto_tur2"
@@ -88,7 +88,7 @@ int main() {
     superPoder1 = (float)(populacao1 + area1 + pib1 + ponto_tur1 + pib_per1 + (area1 / populacao1));
     // Calcula o super poder da Carta 02 de acordo com solicitado no Desafio Mestre
     superPoder2 = (float)(populacao2 + area2 + pib2 + ponto_tur2 + pib_per2 + (area2 / populacao2));
-    
+    /*
     // populacao, area, pib, pontos turisticos, densidade populacional, pib per capita, super poder.
     // Não encotrei como fazer essa comparação sem ser com if, else
     // Comparando População
@@ -137,14 +137,123 @@ int main() {
     // Desafio novato Tema 02 
     // Compara a população das 2 cartas e volta com o resultado.
     if (populacao1 > populacao2){
-        printf("\nCarta 01: %s (%s): %d\n", cidade1, estado1, populacao1);
-        printf("Carta 02: %s (%s): %d\n", cidade2, estado2, populacao2);
+        printf("\nCarta 01: %s (%s): %lu\n", cidade1, estado1, populacao1);
+        printf("Carta 02: %s (%s): %lu\n", cidade2, estado2, populacao2);
         printf("Resultado: Carta 01 (%s) venceu\n", cidade1);
     } else {
-        printf("\nCarta 01: %s (%s): %d\n", cidade1, estado1, populacao1);
-        printf("Carta 02: %s (%s): %d\n", cidade2, estado2, populacao2);
+        printf("\nCarta 01: %s (%s): %lu\n", cidade1, estado1, populacao1);
+        printf("Carta 02: %s (%s): %lu\n", cidade2, estado2, populacao2);
         printf("Resultado: Carta 02 (%s) venceu\n", cidade2);
     };
+    */
+    // Desafio Aventureiro Tema 02.
+    int escolhaComp;
+    printf("\nQual atributo da carta você quer comparar?\n");
+    printf("[1] - População.\n");
+    printf("[2] - Área.\n");
+    printf("[3] - PIB.\n");
+    printf("[4] - Número de pontos turísticos.\n");
+    printf("[5] - Densidade Demográfica.\n");
+    printf("Escolha uma das opções acima...\n");
+    scanf("%d", &escolhaComp);
+    // Começo do switch para escolha do usuário quanto a escolha da comparação a ser feita
+    switch (escolhaComp)
+
+    {
+    // case 1 = População
+    case 1:
+        if (populacao1 > populacao2 && populacao1 < populacao2){
+            if (populacao1 > populacao2){
+                printf("\nCarta 01: %s (%s): %lu\n", cidade1, estado1, populacao1);
+                printf("Carta 02: %s (%s): %lu\n", cidade2, estado2, populacao2);
+                printf("Resultado: Carta 01 (%s) venceu\n", cidade1);
+            } else {
+                printf("\nCarta 01: %s (%s): %lu\n", cidade1, estado1, populacao1);
+                printf("Carta 02: %s (%s): %lu\n", cidade2, estado2, populacao2);
+                printf("Resultado: Carta 02 (%s) venceu\n", cidade2);
+            };
+        } else {
+            printf("\nCarta 01: %s (%s): %lu\n", cidade1, estado1, populacao1);
+            printf("Carta 02: %s (%s): %lu\n", cidade2, estado2, populacao2);
+            printf("Resultado: Empate!!\n");
+        };
+        break;
+    // case 2 = Área
+    case 2:
+        if (area1 > area2 && area1 < area2){
+            if (area1 > area2){
+                printf("\nCarta 01: %s (%s): %f\n", cidade1, estado1, area1);
+                printf("Carta 02: %s (%s): %f\n", cidade2, estado2, area2);
+                printf("Resultado: Carta 01 (%s) venceu\n", cidade1);
+            } else {
+                printf("\nCarta 01: %s (%s): %f\n", cidade1, estado1, area1);
+                printf("Carta 02: %s (%s): %f\n", cidade2, estado2, area2);
+                printf("Resultado: Carta 02 (%s) venceu\n", cidade2);
+            };
+        } else {
+            printf("\nCarta 01: %s (%s): %f\n", cidade1, estado1, area1);
+            printf("Carta 02: %s (%s): %f\n", cidade2, estado2, area2);
+            printf("Resultado: Empate!!\n");
+        };
+        break;
+    // case 3 = PIB
+    case 3:
+        if (pib1 > pib2 && pib1 < pib2){
+            if (pib1 > pib2){
+                printf("\nCarta 01: %s (%s): %f\n", cidade1, estado1, pib1);
+                printf("Carta 02: %s (%s): %f\n", cidade2, estado2, pib2);
+                printf("Resultado: Carta 01 (%s) venceu\n", cidade1);
+            } else {
+                printf("\nCarta 01: %s (%s): %f\n", cidade1, estado1, pib1);
+                printf("Carta 02: %s (%s): %f\n", cidade2, estado2, pib2);
+                printf("Resultado: Carta 02 (%s) venceu\n", cidade2);
+            };
+        } else {
+            printf("\nCarta 01: %s (%s): %f\n", cidade1, estado1, pib1);
+            printf("Carta 02: %s (%s): %f\n", cidade2, estado2, pib2);
+            printf("Resultado: Empate!!\n");
+        };
+        break;
+    // case 4 = Número de pontos turísticos
+    case 4:
+        if (ponto_tur1 > ponto_tur2 && ponto_tur1 < ponto_tur2){
+            if (ponto_tur1 > ponto_tur2){
+                printf("\nCarta 01: %s (%s): %d\n", cidade1, estado1, ponto_tur1);
+                printf("Carta 02: %s (%s): %d\n", cidade2, estado2, ponto_tur2);
+                printf("Resultado: Carta 01 (%s) venceu\n", cidade1);
+            } else {
+                printf("\nCarta 01: %s (%s): %d\n", cidade1, estado1, ponto_tur1);
+                printf("Carta 02: %s (%s): %d\n", cidade2, estado2, ponto_tur2);
+                printf("Resultado: Carta 02 (%s) venceu\n", cidade2);
+            };
+        } else {
+            printf("\nCarta 01: %s (%s): %d\n", cidade1, estado1, ponto_tur1);
+            printf("Carta 02: %s (%s): %d\n", cidade2, estado2, ponto_tur2);
+            printf("Resultado: Empate!!\n");
+        };
+        break;
+    // case 5 = Densidade Demográfica
+    case 5:
+        if (dens_popul1 < dens_popul2 && dens_popul1 > dens_popul2){
+            if (dens_popul1 < dens_popul2){
+                printf("\nCarta 01: %s (%s): %f\n", cidade1, estado1, dens_popul1);
+                printf("Carta 02: %s (%s): %f\n", cidade2, estado2, dens_popul2);
+                printf("Resultado: Carta 01 (%s) venceu\n", cidade1);
+            } else {
+                printf("\nCarta 01: %s (%s): %f\n", cidade1, estado1, dens_popul1);
+                printf("Carta 02: %s (%s): %f\n", cidade2, estado2, dens_popul2);
+                printf("Resultado: Carta 02 (%s) venceu\n", cidade2);
+            };
+        } else {
+            printf("\nCarta 01: %s (%s): %f\n", cidade1, estado1, dens_popul1);
+            printf("Carta 02: %s (%s): %f\n", cidade2, estado2, dens_popul2);
+            printf("Resultado: Empate!!\n");
+        };
+        break;
+    default:
+        printf("Vôce escolheu uma opção inexistente.");
+        break;
+    }
 
     return 0;
 

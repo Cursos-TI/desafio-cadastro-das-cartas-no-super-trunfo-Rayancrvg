@@ -162,7 +162,7 @@ int main() {
     {
     // case 1 = População
     case 1:
-        if (populacao1 > populacao2 && populacao1 < populacao2){
+        if (populacao1 > populacao2 || populacao1 < populacao2){
             if (populacao1 > populacao2){
                 printf("\nCarta 01: %s (%s): %lu\n", cidade1, estado1, populacao1);
                 printf("Carta 02: %s (%s): %lu\n", cidade2, estado2, populacao2);
@@ -180,7 +180,7 @@ int main() {
         break;
     // case 2 = Área
     case 2:
-        if (area1 > area2 && area1 < area2){
+        if (area1 > area2 || area1 < area2){
             if (area1 > area2){
                 printf("\nCarta 01: %s (%s): %f\n", cidade1, estado1, area1);
                 printf("Carta 02: %s (%s): %f\n", cidade2, estado2, area2);
@@ -198,7 +198,7 @@ int main() {
         break;
     // case 3 = PIB
     case 3:
-        if (pib1 > pib2 && pib1 < pib2){
+        if (pib1 > pib2 || pib1 < pib2){
             if (pib1 > pib2){
                 printf("\nCarta 01: %s (%s): %f\n", cidade1, estado1, pib1);
                 printf("Carta 02: %s (%s): %f\n", cidade2, estado2, pib2);
@@ -216,7 +216,7 @@ int main() {
         break;
     // case 4 = Número de pontos turísticos
     case 4:
-        if (ponto_tur1 > ponto_tur2 && ponto_tur1 < ponto_tur2){
+        if (ponto_tur1 > ponto_tur2 || ponto_tur1 < ponto_tur2){
             if (ponto_tur1 > ponto_tur2){
                 printf("\nCarta 01: %s (%s): %d\n", cidade1, estado1, ponto_tur1);
                 printf("Carta 02: %s (%s): %d\n", cidade2, estado2, ponto_tur2);
@@ -234,7 +234,7 @@ int main() {
         break;
     // case 5 = Densidade Demográfica
     case 5:
-        if (dens_popul1 < dens_popul2 && dens_popul1 > dens_popul2){
+        if (dens_popul1 < dens_popul2 || dens_popul1 > dens_popul2){
             if (dens_popul1 < dens_popul2){
                 printf("\nCarta 01: %s (%s): %f\n", cidade1, estado1, dens_popul1);
                 printf("Carta 02: %s (%s): %f\n", cidade2, estado2, dens_popul2);
